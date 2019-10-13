@@ -1,3 +1,3 @@
 # front-end-testing
 
-This project is created to try vue js as part of my frontend project
+This project is created to try vue js as part of my frontend projects

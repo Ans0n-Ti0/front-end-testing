@@ -19,6 +19,16 @@
   </ol>
 </div>
 
+<div id="vue-click">
+  <p>{{ message }}</p>
+  <button v-on:click="reverseMessage">Reverse Message</button>
+</div>
+
+<div id="vue-input">
+  <p>{{ message }}</p>
+  <input v-model="message" />
+</div>
+
 <script>
   var app2 = new Vue({
     el: "#app-2",
@@ -35,11 +45,27 @@
   var app4 = new Vue({
     el: "#vue-for",
     data: {
-      todos: [
-        { text: "Text 1" },
-        { text: "Text 2" },
-        { text: "Text 3" }
-      ]
+      todos: [{ text: "Text 1" }, { text: "Text 2" }, { text: "Text 3" }]
+    }
+  });
+  var app5 = new Vue({
+    el: "#vue-click",
+    data: {
+      message: "Hello World!"
+    },
+    methods: {
+      reverseMessage: function() {
+        this.message = this.message
+          .split("")
+          .reverse()
+          .join("");
+      }
+    }
+  });
+  var app6 = new Vue({
+    el: "#vue-input",
+    data: {
+      message: "Hello World!"
     }
   });
 </script>

@@ -8,7 +8,8 @@
 </div>
 
 <div id="vue-if">
-  <span v-if="seen">Now you see me</span>
+  <div v-if="seen">Now you see me</div>
+  <button v-on:click="toggleText">Toggle</button>
 </div>
 
 <div id="vue-for">
@@ -40,6 +41,11 @@
     el: "#vue-if",
     data: {
       seen: true
+    },
+    methods: {
+        toggleText: function() {
+            this.seen = !this.seen;
+        }
     }
   });
   var app4 = new Vue({

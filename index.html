@@ -30,6 +30,10 @@
   <input v-model="message" />
 </div>
 
+<div id="method-handler">
+  <button v-on:click="greet">Greet</button>
+</div>
+
 <script>
   var app2 = new Vue({
     el: "#app-2",
@@ -74,4 +78,20 @@
       message: "Hello World!"
     }
   });
+
+  var vm = new Vue({
+    el: '#method-handler',
+    data: {
+      name: 'Vue.js'
+    },
+    // define methods under the `methods` object
+    methods: {
+      greet: function (event) {
+        // `this` inside methods point to the Vue instance
+        alert('Hello ' + this.name + '!')
+        // `event` is the native DOM event
+        alert(event.target.tagName)
+      }
+    }
+  })
 </script>

@@ -30,6 +30,11 @@
   <input v-model="message" />
 </div>
 
+<div id="app">
+  <p>{{ message }}</p>
+  <input v-model="message">
+</div>
+
 <script>
   var app2 = new Vue({
     el: "#app-2",
@@ -43,9 +48,9 @@
       seen: true
     },
     methods: {
-        toggleText: function() {
-            this.seen = !this.seen;
-        }
+      toggleText: function () {
+        this.seen = !this.seen;
+      }
     }
   });
   var app4 = new Vue({
@@ -60,7 +65,7 @@
       message: "Hello World!"
     },
     methods: {
-      reverseMessage: function() {
+      reverseMessage: function () {
         this.message = this.message
           .split("")
           .reverse()
@@ -74,4 +79,11 @@
       message: "Hello World!"
     }
   });
+
+  new Vue({
+    el: '#app',
+    data: {
+      message: 'Hello Vue.js!'
+    }
+  })
 </script>

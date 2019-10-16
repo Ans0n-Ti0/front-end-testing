@@ -37,6 +37,7 @@
 <div id="app">
   <p>{{ message }}</p>
   <input v-model="message">
+</div>
 
 <ul id="example-list">
   <li v-for="item in items">
@@ -102,12 +103,16 @@
     el: '#app',
     data: {
       message: 'Hello Vue.js!'
+    },
     el: '#example-list',
     data: {
       items: [
         { message: 'Foo' },
         { message: 'Bar' }
       ]
+    }
+  })
+
   new Vue({
     el: '#method-handler',
     data: {

@@ -30,6 +30,12 @@
   <input v-model="message" />
 </div>
 
+<ul id="example-list">
+  <li v-for="item in items">
+    {{ item.message }}
+  </li>
+</ul>
+
 <div id="method-handler">
   <button v-on:click="greet">Greet</button>
 </div>
@@ -84,7 +90,14 @@
     }
   });
 
-  var vm = new Vue({
+  new Vue({
+    el: '#example-list',
+    data: {
+      items: [
+        { message: 'Foo' },
+        { message: 'Bar' }
+      ]
+  new Vue({
     el: '#method-handler',
     data: {
       name: 'Vue.js'
